@@ -262,7 +262,10 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 2 && $_SESSION['status'
                             echo "<select class='form-select' name='acao' id='acao'>";
                             echo "<option value=''>Informe a Ação tomada</option>";
                             echo "<option value='Advertência'>Advertência</option>";
-                            echo "<option value='Cobrança-VALE'>Cobrança-VALE</option>";
+                            echo "<option value='Cobrança e Orientação'>Cobrança e Orientação</option>";
+                            echo "<option value='Cobrança e Advertência'>Cobrança e Advertência</option>";
+                            echo "<option value='Cobrança e Suspenção 1 DIA'>Cobrança e Suspenção 1 DIA</option>";
+                            echo "<option value='Cobrança e Suspenção 3 DIA'>Cobrança e Suspenção 3 DIA</option>";
                             echo "<option value='Desconsiderar'>Desconsiderar</option>";
                             echo "<option value='Fazer Reparo'>Fazer Reparo</option>";
                             echo "<option value='Orientação'>Orientação</option>";
