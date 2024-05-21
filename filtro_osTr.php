@@ -97,7 +97,7 @@
                             <td class='text-start'>{$linha['ocorrencia']}</td>
                             <td class='text-start'>{$linha['descricao']}</td>
                             <td class='text-start'>{$linha['acao']}</td>
-                            <td><a href='download_video.php?video={$linha['id']}'>Download</a></td>";
+                            <td><a href='download_videoTr.php?video={$linha['id']}'>Download</a></td>";
                     echo "</tr>";
                 }
                 echo "</tbody>
