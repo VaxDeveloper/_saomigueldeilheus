@@ -147,11 +147,14 @@ if (!isset($_SESSION['user']) || !in_array($_SESSION['status'], [2, 10, 11])) {
                             <th class='text-center align-middle'>Carro</th>
                             <th class='text-center align-middle mobile-report'>Linha</th>
                             <th class='text-start align-middle'>Ocorrência</th>
-                            <th class='text-center align-middle'>Ver</th>
+                            <th class='text-center align-middle'>Ação Tráfego</th>
+                            <th class='text-center align-middle'>OB: Tráfego</th>
+
                         </tr>
                         </thead>
                         <tbody class='table-group-divider'>";
                 while ($linha = mysqli_fetch_assoc($resultado_consulta)) {
+                    $caminho_arquivo = "videos/{$linha['video']}";
                     echo "<tr>
                         <td class='text-center text-danger align-middle'>{$linha['id']}</td>
                         <td class='text-center align-middle'>{$linha['data']}</td>
@@ -160,9 +163,9 @@ if (!isset($_SESSION['user']) || !in_array($_SESSION['status'], [2, 10, 11])) {
                         <td class='text-center align-middle'>{$linha['carro']}</td>
                         <td class='text-center align-middle mobile-report'>{$linha['linha']}</td>
                         <td class='text-start align-middle'>{$linha['ocorrencia']}</td>
-                        <td class='text-center align-middle update-action-column'>
-                            <a href='ver_ocorrenciaFim.php?id={$linha['id']}' class='btn btn-outline-info btn-sm'>Ver</a>
-                        </td>
+                        <td class='text-center align-middle'>{$linha['acao']}</td>
+                        <td class='text-start align-middle'>{$linha['obsercacoes']}</td>
+                        <td class='text-center align-middle'><a href='download_videoFim.php?video={$linha['id']}'>Download</a></td>
                     </tr>";
                 }
                 echo "</tbody>
