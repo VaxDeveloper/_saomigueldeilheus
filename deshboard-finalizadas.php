@@ -149,6 +149,7 @@ if (!isset($_SESSION['user']) || !in_array($_SESSION['status'], [2, 10, 11])) {
                             <th class='text-start align-middle'>Ocorrência</th>
                             <th class='text-center align-middle'>Ação Tráfego</th>
                             <th class='text-center align-middle'>OB: Tráfego</th>
+                            <th class='text-center align-middle'>Download</th>
 
                         </tr>
                         </thead>
@@ -164,7 +165,7 @@ if (!isset($_SESSION['user']) || !in_array($_SESSION['status'], [2, 10, 11])) {
                         <td class='text-center align-middle mobile-report'>{$linha['linha']}</td>
                         <td class='text-start align-middle'>{$linha['ocorrencia']}</td>
                         <td class='text-center align-middle'>{$linha['acao']}</td>
-                        <td class='text-start align-middle'>{$linha['obsercacoes']}</td>
+                        <td class='text-start align-middle'>{$linha['observacoes']}</td>
                         <td class='text-center align-middle'><a href='download_videoFim.php?video={$linha['id']}'>Download</a></td>
                     </tr>";
                 }
