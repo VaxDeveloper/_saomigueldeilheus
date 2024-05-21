@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
-    <link rel="stylesheet" href="assets/css/footer/Footer-Dark-icons.css">
-    <link rel="stylesheet" href="assets/css/FPE-Gentella-form-elements-custom.css">
-    <link rel="stylesheet" href="assets/css/FPE-Gentella-form-elements.css">
-    <link rel="stylesheet" href="assets/css/tela-login/Login-with-overlay-image.css">
+    <link rel="stylesheet" href="../assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="../assets/css/footer/Footer-Dark-icons.css">
+    <link rel="stylesheet" href="../assets/css/FPE-Gentella-form-elements-custom.css">
+    <link rel="stylesheet" href="../assets/css/FPE-Gentella-form-elements.css">
+    <link rel="stylesheet" href="../assets/css/tela-login/Login-with-overlay-image.css">
 
     <title>Gráfico com Chart.js e MySQL</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -32,12 +32,13 @@
 
     <nav>
         <div class="container" style="margin-bottom:50px; margin-top: 20px">
-            <img src="../assets/img/logo.png" alt="logo" style="width:145px; filter: invert(45%);">
-            <h3 style="margin-top: 20px">Relatório de Ocorrências - Transporte Urbano São Miguel de Ilhéus</h3>
+            <img src="../assets/img/Logo_aguia-azul.png" alt="logo" style="width:300px; filter: invert(80%);">
+            <h3 style="margin-top: 20px">Relatório de Ocorrências - Setor de Vídeo</h3>
         </div>
     </nav>
 
     <div class="container">
+        <!-- Gráficos -->
         <div class="row">
             <div class="col-md-6" style="width: 580px;">
                 <canvas id="myChart1" width="400" height="400"></canvas>
@@ -46,10 +47,28 @@
                 <canvas id="myChart2" width="400" height="400"></canvas>
             </div>
         </div>
+
+        <!-- Lista de motoristas com mais ocorrências -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h4>Top 10 Motoristas com Mais Ocorrências</h4>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Motorista</th>
+                            <th>Total de Ocorrências</th>
+                        </tr>
+                    </thead>
+                    <tbody id="motoristas-list">
+                        <!-- Conteúdo preenchido pelo JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Recuperar os dados do PHP usando AJAX apenas uma vez
+        // Recuperar os dados do PHP usando AJAX
         var xmlhttp = new XMLHttpRequest();
         var url = "dados.php";
 
@@ -58,13 +77,16 @@
                 // Converter os dados JSON recebidos para objeto JavaScript
                 var data = JSON.parse(this.responseText);
 
+                // Dados para os gráficos
+                var dataGraficos = data.graficos;
+
                 // Processar os dados e criar os gráficos
                 var labels = [];
                 var values = [];
                 var actionCounts = {}; // Objeto para contar as ações por ocorrência
                 var backgroundColors = []; // Array para cores
 
-                data.forEach(function (item) {
+                dataGraficos.forEach(function (item) {
                     labels.push(item.ocorrencia); // Ajuste para a coluna correta
 
                     // Contar as ações por ocorrência
@@ -170,6 +192,22 @@
                         }
                     }
                 });
+
+                // Dados para a tabela dos motoristas
+                var dataMotoristas = data.motoristas;
+
+                // Preencher a tabela dos motoristas
+                var motoristasList = document.getElementById('motoristas-list');
+                dataMotoristas.forEach(function (motorista) {
+                    var row = document.createElement('tr');
+                    var motoristaCell = document.createElement('td');
+                    motoristaCell.textContent = motorista.motorista;
+                    var ocorrenciasCell = document.createElement('td');
+                    ocorrenciasCell.textContent = motorista.total_ocorrencias;
+                    row.appendChild(motoristaCell);
+                    row.appendChild(ocorrenciasCell);
+                    motoristasList.appendChild(row);
+                });
             }
         };
 
@@ -181,7 +219,7 @@
         <div style="display: flex;">
             <!-- Botão de volta para Painel -->
             <div style="margin-top: 20px;" class="print-hide">
-                <a href="deshboard-finalizadas.php" class="btn btn-primary">Voltar para Deashboard</a>
+                <a href="../painel.php" class="btn btn-primary">Voltar para Painel</a>
             </div>
 
             <!-- Botão de Gerar Impressão -->
