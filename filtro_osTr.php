@@ -77,6 +77,8 @@
                                 <th class='text-center'>Descrição</th>
                                 <th class='text-center'>Ação</th>
                                 <th>Link do Vídeo</th>";
+                if ($_SESSION['status'] == 5) {
+                    echo "<th>Editar</th>";
                 }
                 echo "</tr>
                         </thead>
