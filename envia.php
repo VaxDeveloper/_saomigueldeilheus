@@ -86,22 +86,22 @@ if (!$conexao) {
                     $update_resultado = mysqli_query($conexao, $update_sql);
 
                     if ($update_resultado) {
-                        echo "<div class='fs-3'>Link para download do vídeo adicionado à tabela no banco de dados.</div><br>";
-                        echo "<div class='fs-3'>Vídeo salvo com sucesso!</div>";
+                        echo "<div class='fs-6'>Link para download do vídeo adicionado à tabela no banco de dados.</div><br>";
+                        echo "<div class='fs-6'>Vídeo salvo com sucesso!</div>";
                     } else {
-                        echo "<div class='fs-3'>ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: </div>" . mysqli_error($conexao);
+                        echo "<div class='fs-6'>ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: </div>" . mysqli_error($conexao);
                     }
                 } else {
-                    echo "<div class='fs-3'>NENHUMA LINHA AFETADA. Verifique se os dados foram inseridos corretamente.</div><br>";
+                    echo "<div class='fs-6'>NENHUMA LINHA AFETADA. Verifique se os dados foram inseridos corretamente.</div><br>";
                 }
             } else {
-                echo "<div class='fs-3'>ERRO AO INSERIR DADOS: </div>" . mysqli_error($conexao);
+                echo "<div class='fs-6'>ERRO AO INSERIR DADOS: </div>" . mysqli_error($conexao);
             }
         } else {
-            echo "<div class='fs-3'>ERRO AO MOVER O ARQUIVO DE VÍDEO PARA O DIRETÓRIO DESTINADO.</div>";
+            echo "<div class='fs-6'>ERRO AO MOVER O ARQUIVO DE VÍDEO PARA O DIRETÓRIO DESTINADO.</div>";
         }
     } else {
-        echo "<div class='fs-3'>ERRO NO ENVIO DO VÍDEO: </div>" . $_FILES['video']['error'];
+        echo "<div class='fs-6'>ERRO NO ENVIO DO VÍDEO: </div>" . $_FILES['video']['error'];
     }
 }
 
