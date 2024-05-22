@@ -87,7 +87,7 @@ if (!$conexao) {
 
                     if ($update_resultado) {
                         echo "<div class='text-light fs-6'>Link para download do vídeo adicionado à tabela no banco de dados.</div><br>";
-                        echo "<div text-light class='fs-6'>Vídeo salvo com sucesso!</div>";
+                        echo "<div class='text-light fs-6'>Vídeo salvo com sucesso!</div>";
                     } else {
                         echo "<div class='text-light  fs-6'>ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: </div>" . mysqli_error($conexao);
                     }
