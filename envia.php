@@ -91,8 +91,6 @@ if (!$conexao) {
                     } else {
                         echo "ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: " . mysqli_error($conexao);
                     }
-
-                    echo "<a href='criar-os-video.php'>VOLTAR</a>";
                 } else {
                     echo "NENHUMA LINHA AFETADA. Verifique se os dados foram inseridos corretamente.<br>";
                 }
@@ -113,7 +111,7 @@ mysqli_close($conexao);
         <div style="display: flex;">
             <!-- Botão de volta para Deschboard -->
             <div style="margin-top: 20px;" class="print-hide">
-                <a href="deshboard-trafego.php" class="btn btn-primary">Voltar para Deschboard</a>
+                <a href="criar-os-video.php" class="btn btn-primary">Voltar Cadastro</a>
             </div>
         </div>
     </div>
