@@ -1,4 +1,40 @@
-<?php
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Smiguel-ADM</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="assets/css/footer/Footer-Dark-icons.css">
+    <link rel="stylesheet" href="assets/css/FPE-Gentella-form-elements-custom.css">
+    <link rel="stylesheet" href="assets/css/FPE-Gentella-form-elements.css">
+    <link rel="stylesheet" href="assets/css/tela-login/Login-with-overlay-image.css">
+
+    <style>
+            /* Oculta o botão de voltar ao dashboard ao imprimir */
+            @media print {
+                .print-hide {
+                    display: none !important;
+                }
+            }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="container" style="margin-bottom:50px; margin-top: 20px">
+            <img src="assets/img/logo.png" alt="logo" style="width:145px; filter: invert(45%);">
+            <h3 style="margin-top: 20px">Relatório de Ocorrências - Setor de Tráfego</h3>
+        </div>
+    </nav>
+
+    <div class="container">
+            <?php
 // Inicia a sessão
 session_start();
 
@@ -73,3 +109,24 @@ if (!$conexao) {
 
 mysqli_close($conexao);
 ?>
+
+        <div style="display: flex;">
+            <!-- Botão de volta para Deschboard -->
+            <div style="margin-top: 20px;" class="print-hide">
+                <a href="deshboard-trafego.php" class="btn btn-primary">Voltar para Deschboard</a>
+            </div>
+
+            <!-- Botão de Gerar Impressão -->
+            <div style="margin-top: 20px;" class="print-hide">
+                <button onclick="imprimirPagina()" class="btn btn-secondary">Imprimir</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function imprimirPagina() {
+            window.print();
+        }
+    </script>
+
+</body>
