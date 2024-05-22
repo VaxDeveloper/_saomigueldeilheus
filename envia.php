@@ -49,7 +49,12 @@ if (!$conexao) {
                     $update_sql = "UPDATE u219851065_smiguel.ocorrencia_video SET video = '" . $link_download . "' WHERE id = " . $ultimo_id;
                     $update_resultado = mysqli_query($conexao, $update_sql);
 
-                   
+                    if ($update_resultado) {
+                        echo "Link para download do vídeo adicionado à tabela no banco de dados.<br>";
+                        echo "Vídeo salvo com sucesso!";
+                    } else {
+                        echo "ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: " . mysqli_error($conexao);
+                    }
 
                     echo "<a href='criar-os-video.php'>VOLTAR</a>";
                 } else {
@@ -67,55 +72,4 @@ if (!$conexao) {
 }
 
 mysqli_close($conexao);
-?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&amp;display=swap">
-    <link rel="stylesheet" href="../assets/css/bs-theme-overrides.css">
-    <link rel="stylesheet" href="../assets/css/footer/Footer-Dark-icons.css">
-    <link rel="stylesheet" href="../assets/css/FPE-Gentella-form-elements-custom.css">
-    <link rel="stylesheet" href="../assets/css/FPE-Gentella-form-elements.css">
-    <link rel="stylesheet" href="../assets/css/tela-login/Login-with-overlay-image.css">
-
-    <title>Gráfico com Chart.js e MySQL</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-
-    <style>
-        /* Oculta o botão de voltar ao dashboard ao imprimir */
-        @media print {
-            .print-hide {
-                display: none !important;
-            }
-        }
-    </style>
-
-</head>
-
-<body>
-
-    <nav>
-        <div class="container" style="margin-bottom:50px; margin-top: 20px">
-            <img src="assets/img/logo.png" alt="logo" style="width:145px; filter: invert(45%);">
-            <h3 style="margin-top: 20px">Relatório de Ocorrências - Setor de Vídeo</h3>
-        </div>
-    </nav>
-</body>
-
-</html>
-
-<php?
-    if ($update_resultado) {
-        echo "Link para download do vídeo adicionado à tabela no banco de dados.<br>";
-        echo "Vídeo salvo com sucesso!";
-    } else {
-        echo "ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: " . mysqli_error($conexao);
-    }
 ?>
