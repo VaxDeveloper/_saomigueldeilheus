@@ -73,7 +73,7 @@ if (!$conexao) {
                 $linhas_afetadas = mysqli_affected_rows($conexao);
 
                 if ($linhas_afetadas > 0) {
-                    echo "<div class='text-warning fs-1'>OCORRÊNCIA CADASTRADA COM SUCESSO!</div><br>";
+                    echo "<div class='fs-1'>OCORRÊNCIA CADASTRADA COM SUCESSO!</div><br>";
 
                     // Obtém o ID da última inserção
                     $ultimo_id = mysqli_insert_id($conexao);
@@ -86,22 +86,22 @@ if (!$conexao) {
                     $update_resultado = mysqli_query($conexao, $update_sql);
 
                     if ($update_resultado) {
-                        echo "<p>Link para download do vídeo adicionado à tabela no banco de dados.</p><br>";
-                        echo "<p>Vídeo salvo com sucesso!</p>";
+                        echo "<div>Link para download do vídeo adicionado à tabela no banco de dados.</div><br>";
+                        echo "<div>Vídeo salvo com sucesso!</div>";
                     } else {
-                        echo "<p>ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: </p>" . mysqli_error($conexao);
+                        echo "<div>ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: </div>" . mysqli_error($conexao);
                     }
                 } else {
-                    echo "<p>NENHUMA LINHA AFETADA. Verifique se os dados foram inseridos corretamente.</p><br>";
+                    echo "<div>NENHUMA LINHA AFETADA. Verifique se os dados foram inseridos corretamente.</div><br>";
                 }
             } else {
-                echo "<p>ERRO AO INSERIR DADOS: </p>" . mysqli_error($conexao);
+                echo "<div>ERRO AO INSERIR DADOS: </div>" . mysqli_error($conexao);
             }
         } else {
-            echo "<p>ERRO AO MOVER O ARQUIVO DE VÍDEO PARA O DIRETÓRIO DESTINADO.</p>";
+            echo "<div>ERRO AO MOVER O ARQUIVO DE VÍDEO PARA O DIRETÓRIO DESTINADO.</div>";
         }
     } else {
-        echo "<p>ERRO NO ENVIO DO VÍDEO: </p>" . $_FILES['video']['error'];
+        echo "<div>ERRO NO ENVIO DO VÍDEO: </div>" . $_FILES['video']['error'];
     }
 }
 
