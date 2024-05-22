@@ -73,7 +73,7 @@ if (!$conexao) {
                 $linhas_afetadas = mysqli_affected_rows($conexao);
 
                 if ($linhas_afetadas > 0) {
-                    echo "<div class='text-warning fs-6'>OCORRÊNCIA CADASTRADA COM SUCESSO!</div><br>";
+                    echo "<div class='text-warning fs-1'>OCORRÊNCIA CADASTRADA COM SUCESSO!</div><br>";
 
                     // Obtém o ID da última inserção
                     $ultimo_id = mysqli_insert_id($conexao);
