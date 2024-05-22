@@ -43,7 +43,7 @@ $conexao = mysqli_connect("localhost", "u219851065_admin", "Xavier364074$", "u21
 if (!$conexao) {
     echo "NÃO CONECTADO";
 } else {
-    echo "<div class='text-warning'>CONECTADO AO BANCO>>>>>>>>></div>";
+    echo "<div class='text-warning'>CONECTADO AO BANCO>>>>>>></div>";
 
     $data = mysqli_real_escape_string($conexao, $_POST['data']);
     $horario = mysqli_real_escape_string($conexao, $_POST['horario']);
@@ -73,7 +73,7 @@ if (!$conexao) {
                 $linhas_afetadas = mysqli_affected_rows($conexao);
 
                 if ($linhas_afetadas > 0) {
-                    echo "OCORRÊNCIA CADASTRADA COM SUCESSO!<br>";
+                    echo "<div class='text-warning'>OCORRÊNCIA CADASTRADA COM SUCESSO!</div><br>";
 
                     // Obtém o ID da última inserção
                     $ultimo_id = mysqli_insert_id($conexao);
