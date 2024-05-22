@@ -87,21 +87,21 @@ if (!$conexao) {
 
                     if ($update_resultado) {
                         echo "<p>Link para download do vídeo adicionado à tabela no banco de dados.</p><br>";
-                        echo "Vídeo salvo com sucesso!";
+                        echo "<p>Vídeo salvo com sucesso!</p>";
                     } else {
-                        echo "ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: " . mysqli_error($conexao);
+                        echo "<p>ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: </p>" . mysqli_error($conexao);
                     }
                 } else {
-                    echo "NENHUMA LINHA AFETADA. Verifique se os dados foram inseridos corretamente.<br>";
+                    echo "<p>NENHUMA LINHA AFETADA. Verifique se os dados foram inseridos corretamente.</p><br>";
                 }
             } else {
-                echo "ERRO AO INSERIR DADOS: " . mysqli_error($conexao);
+                echo "<p>ERRO AO INSERIR DADOS: </p>" . mysqli_error($conexao);
             }
         } else {
-            echo "ERRO AO MOVER O ARQUIVO DE VÍDEO PARA O DIRETÓRIO DESTINADO.";
+            echo "<p>ERRO AO MOVER O ARQUIVO DE VÍDEO PARA O DIRETÓRIO DESTINADO.</p>";
         }
     } else {
-        echo "ERRO NO ENVIO DO VÍDEO: " . $_FILES['video']['error'];
+        echo "<p>ERRO NO ENVIO DO VÍDEO: </p>" . $_FILES['video']['error'];
     }
 }
 
