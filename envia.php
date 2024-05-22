@@ -28,7 +28,7 @@
 <body>
     <nav>
         <div class="container" style="margin-bottom:50px; margin-top: 20px">
-            <img src="assets/img/logo.png" alt="logo" style="width:145px;">
+            <img src="assets/img/logo.png" alt="logo" style="width:145px; filter: invert(45%);">
             <h3 style="margin-top: 20px">Transporte Urbano São Miguel de Ilhéus</h3>
         </div>
     </nav>
@@ -43,7 +43,7 @@ $conexao = mysqli_connect("localhost", "u219851065_admin", "Xavier364074$", "u21
 if (!$conexao) {
     echo "NÃO CONECTADO";
 } else {
-    echo "<div class='text-light fs-6'>CONECTADO AO BANCO>>>>>>></div>";
+    echo "<div class='fs-6'>CONECTADO AO BANCO>>>>>>></div>";
 
     $data = mysqli_real_escape_string($conexao, $_POST['data']);
     $horario = mysqli_real_escape_string($conexao, $_POST['horario']);
@@ -73,7 +73,7 @@ if (!$conexao) {
                 $linhas_afetadas = mysqli_affected_rows($conexao);
 
                 if ($linhas_afetadas > 0) {
-                    echo "<div class='text-light fs-6'>OCORRÊNCIA CADASTRADA COM SUCESSO!!!</div><br>";
+                    echo "<div class='fs-6'>OCORRÊNCIA CADASTRADA COM SUCESSO!!!</div><br>";
 
                     // Obtém o ID da última inserção
                     $ultimo_id = mysqli_insert_id($conexao);
@@ -86,22 +86,22 @@ if (!$conexao) {
                     $update_resultado = mysqli_query($conexao, $update_sql);
 
                     if ($update_resultado) {
-                        echo "<div class='text-light fs-6'>Link para download do vídeo adicionado à tabela no banco de dados.</div><br>";
-                        echo "<div class='text-light fs-6'>Vídeo salvo com sucesso!</div>";
+                        echo "<div class='fs-6'>Link para download do vídeo adicionado à tabela no banco de dados.</div><br>";
+                        echo "<div class='fs-6'>Vídeo salvo com sucesso!</div>";
                     } else {
-                        echo "<div class='text-light  fs-6'>ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: </div>" . mysqli_error($conexao);
+                        echo "<div class='fs-6'>ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: </div>" . mysqli_error($conexao);
                     }
                 } else {
-                    echo "<div class=' text-light fs-6'>NENHUMA LINHA AFETADA. Verifique se os dados foram inseridos corretamente.</div><br>";
+                    echo "<div class='fs-6'>NENHUMA LINHA AFETADA. Verifique se os dados foram inseridos corretamente.</div><br>";
                 }
             } else {
-                echo "<div class='text-light  fs-6'>ERRO AO INSERIR DADOS: </div>" . mysqli_error($conexao);
+                echo "<div class='fs-6'>ERRO AO INSERIR DADOS: </div>" . mysqli_error($conexao);
             }
         } else {
-            echo "<div class='text-light  fs-6'>ERRO AO MOVER O ARQUIVO DE VÍDEO PARA O DIRETÓRIO DESTINADO.</div>";
+            echo "<div class='fs-6'>ERRO AO MOVER O ARQUIVO DE VÍDEO PARA O DIRETÓRIO DESTINADO.</div>";
         }
     } else {
-        echo "<div class='text-light  fs-6'>ERRO NO ENVIO DO VÍDEO: </div>" . $_FILES['video']['error'];
+        echo "<div class='fs-6'>ERRO NO ENVIO DO VÍDEO: </div>" . $_FILES['video']['error'];
     }
 }
 
