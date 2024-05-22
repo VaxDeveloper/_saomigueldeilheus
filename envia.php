@@ -105,16 +105,17 @@ mysqli_close($conexao);
         <div class="container" style="margin-bottom:50px; margin-top: 20px">
             <img src="assets/img/logo.png" alt="logo" style="width:145px; filter: invert(45%);">
             <h3 style="margin-top: 20px">Relatório de Ocorrências - Setor de Vídeo</h3>
-            <php?
-                 if ($update_resultado) {
-                            echo "Link para download do vídeo adicionado à tabela no banco de dados.<br>";
-                            echo "Vídeo salvo com sucesso!";
-                        } else {
-                            echo "ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: " . mysqli_error($conexao);
-                        }
-            ?>
         </div>
     </nav>
 </body>
 
 </html>
+
+<php?
+    if ($update_resultado) {
+        echo "Link para download do vídeo adicionado à tabela no banco de dados.<br>";
+        echo "Vídeo salvo com sucesso!";
+    } else {
+        echo "ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: " . mysqli_error($conexao);
+    }
+?>
