@@ -43,7 +43,7 @@ $conexao = mysqli_connect("localhost", "u219851065_admin", "Xavier364074$", "u21
 if (!$conexao) {
     echo "NÃO CONECTADO";
 } else {
-    echo "<p class='text-warning fs-5'>CONECTADO AO BANCO>>>>>>></p>";
+    echo "<div class='text-warning fs-5'>CONECTADO AO BANCO>>>>>>></div>";
 
     $data = mysqli_real_escape_string($conexao, $_POST['data']);
     $horario = mysqli_real_escape_string($conexao, $_POST['horario']);
