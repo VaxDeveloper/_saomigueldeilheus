@@ -115,18 +115,6 @@ mysqli_close($conexao);
             <div style="margin-top: 20px;" class="print-hide">
                 <a href="deshboard-trafego.php" class="btn btn-primary">Voltar para Deschboard</a>
             </div>
-
-            <!-- Botão de Gerar Impressão -->
-            <div style="margin-top: 20px;" class="print-hide">
-                <button onclick="imprimirPagina()" class="btn btn-secondary">Imprimir</button>
-            </div>
         </div>
     </div>
-
-    <script>
-        function imprimirPagina() {
-            window.print();
-        }
-    </script>
-
 </body>
