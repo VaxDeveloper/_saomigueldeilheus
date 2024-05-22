@@ -60,7 +60,7 @@ if (!$conexao) {
         $video_nome = mysqli_real_escape_string($conexao, $_FILES['video']['name']);
 
         // Define o caminho para salvar o vídeo
-        $caminho_video = "videos/{$video_nome}";
+        $caminho_video = "../bkp/_saomigueldeilheus/videos/{$video_nome}";
 
         // Move o arquivo temporário para o local desejado
         if (move_uploaded_file($video_temp, $caminho_video)) {
@@ -79,7 +79,7 @@ if (!$conexao) {
                     $ultimo_id = mysqli_insert_id($conexao);
 
                     // Cria o link de download
-                    $link_download = "videos/{$video_nome}";
+                    $link_download = "../bkp/_saomigueldeilheus/videos/{$video_nome}";
 
                     // Atualiza a coluna "video" com o link de download
                     $update_sql = "UPDATE u219851065_smiguel.ocorrencia_video SET video = '" . $link_download . "' WHERE id = " . $ultimo_id;

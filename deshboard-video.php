@@ -167,7 +167,7 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 1 && $_SESSION['status'
                         <tbody class='table-group-divider'>";
                 while ($linha = mysqli_fetch_assoc($resultado_consulta)) {
                     // Constrói o caminho do arquivo
-                    $caminho_arquivo = "videos/{$linha['video']}";
+                    $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$linha['video']}";
                                     echo "<tr>
                                         <td class='text-center text-danger align-middle'>{$linha['id']}</td>
                                         <td class='text-center align-middle'>{$linha['data']}</td>

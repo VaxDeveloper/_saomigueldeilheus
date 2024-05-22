@@ -116,7 +116,7 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 2 && $_SESSION['status'
                             echo "<p><strong>Horário:</strong> " . $detalhes_ocorrencia['horario'] . "</p>";
 
                             // Constrói o caminho do arquivo de vídeo
-                            $caminho_arquivo = "videos/{$detalhes_ocorrencia['video']}";
+                            $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$detalhes_ocorrencia['video']}";
 
                             echo "<div class='d-flex'>";
                             echo "<p><strong>Vídeo:</strong></p>";

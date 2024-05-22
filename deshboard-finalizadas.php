@@ -155,7 +155,7 @@ if (!isset($_SESSION['user']) || !in_array($_SESSION['status'], [2, 10, 11])) {
                         </thead>
                         <tbody class='table-group-divider'>";
                 while ($linha = mysqli_fetch_assoc($resultado_consulta)) {
-                    $caminho_arquivo = "videos/{$linha['video']}";
+                    $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$linha['video']}";
                     echo "<tr>
                         <td class='text-center text-danger align-middle'>{$linha['id']}</td>
                         <td class='text-center align-middle'>{$linha['data']}</td>
@@ -179,8 +179,8 @@ if (!isset($_SESSION['user']) || !in_array($_SESSION['status'], [2, 10, 11])) {
             </div>
         </div>
     </div>
-    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../assets/js/bs-init.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
 </body>
 
 </html>

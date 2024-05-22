@@ -85,7 +85,7 @@
                         <tbody class='table-group-divider'>";
                 while ($linha = mysqli_fetch_assoc($resultado_consulta)) {
                     // Constrói o caminho do arquivo
-                    $caminho_arquivo = "videos/{$linha['video']}";
+                    $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$linha['video']}";
 
                     echo "<tr>
                             <td class='text-center'>{$linha['id']}</td>
