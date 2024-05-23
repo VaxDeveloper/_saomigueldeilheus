@@ -297,8 +297,8 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 2 && $_SESSION['status'
                             // Adicionar um campo oculto para enviar o ID da ocorrência
                             echo "<input type='hidden' name='id_ocorrencia' value='" . $id_ocorrencia . "'>";
                             
-                            // Botão de envio do formulário
-                            echo "<input class='btn btn-outline-warning mt-3' type='submit' value='Enviar para o Banco de Dados'>";
+                             // Botão de envio do formulário
+                            echo "<input class='btn btn-outline-danger mt-3' type='submit' value='>>> ATUALIZAR e FINALIZAR <<<'>";
                             echo "</form>";
                             echo "</div>";
                             

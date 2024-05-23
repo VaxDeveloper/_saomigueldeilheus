@@ -327,7 +327,7 @@ if (!isset($_SESSION['user'])) {
                                                     <option value="Criança maior de 6 anos">Criança maior de 6 anos</option>
                                                     <option value="DVR com Defeito">DVR com Defeito</option>
                                                     <option value="Discussão com cliente">Discussão com cliente</option>
-                                                    <option value="Motorista não gira a roleta">Evasão</option>
+                                                    <option value="Evasão">Evasão</option>
                                                     <option value="Motorista sem cinto">Motorista sem cinto</option>
                                                     <option value="Motorista tira a mão do volante">Motorista tira a mão
                                                         do volante</option>
