@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Águia Azul-AD-ADM</title>
+    <title>Smiguel-ADM</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&amp;display=swap">
@@ -28,7 +28,7 @@
 <body>
     <nav>
         <div class="container" style="margin-bottom:50px; margin-top: 20px">
-            <img src="assets/img/Logo_aguia-azul.png" alt="logo" style="width:300px; filter: invert(80%);">
+            <img src="assets/img/logo.png" alt="logo" style="width:145px; filter: invert(45%);">
             <h3 style="margin-top: 20px">Relatório de Ocorrências - Setor de Vídeo</h3>
         </div>
     </nav>
@@ -55,10 +55,10 @@
                 $filtro = mysqli_real_escape_string($conexao, $filtro);
 
                 // Constrói a consulta SQL com base nos filtros
-                $consulta_sql = "SELECT * FROM u219851065_smiguel.ocorrencia_video WHERE $coluna LIKE '%$filtro%'";
+                $consulta_sql = "SELECT * FROM u219851065_smiguel.ocorrencia_finalizada WHERE $coluna LIKE '%$filtro%'";
             } else {
                 // Caso contrário, consulta sem filtro
-                $consulta_sql = "SELECT * FROM u219851065_smiguel.ocorrencia_video";
+                $consulta_sql = "SELECT * FROM u219851065_smiguel.ocorrencia_finalizada";
             }
 
             $resultado_consulta = mysqli_query($conexao, $consulta_sql);
