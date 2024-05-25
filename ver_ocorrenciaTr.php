@@ -276,8 +276,7 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 2 && $_SESSION['status'
                             echo "</div>";
                             echo "<div class='col-6 Front-desk'>";
                             echo "<p for='acao' style='font-size: 1.3em;'>1) Preencha os campos em aberto da ocorrência.</p>";
-                            echo "<p for='acao' style='font-size: 1.3em;'>2) Clique no botão ENVIAR para que os dados sejam registrados ou atualizados no Banco de Dados.</p>";
-                            echo "<p for='acao' style='font-size: 1.3em;'>3) Volte ao Deaschboard e finalize a OS clicando em FIM.</p>";
+                            echo "<p for='acao' style='font-size: 1.3em;'>2) Clique no botão 'ATRUALIZAR E FINALIZAR' para que os dados sejam registrados e finalizados.</p>";
                             echo "</div>";
                             echo "</div>";
                             
