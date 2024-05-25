@@ -121,7 +121,7 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 2 && $_SESSION['status'
                             echo "<div class='d-flex'>";
                             echo "<p><strong>Vídeo:</strong></p>";
                             // Adiciona um link para download do vídeo
-                            echo "<a class='mt-1 mx-2 link-warning' href='download_videoTr.php?video={$detalhes_ocorrencia['id']}'>Vídeo-1</a>";
+                            echo "<a class='mt-1 mx-3 link-warning' href='download_videoTr.php?video={$detalhes_ocorrencia['id']}'>Vídeo-1</a>";
                             echo "</div>";
                             echo "</div>";
                             echo "<div class='col-8 detalhes-info-2'>";
