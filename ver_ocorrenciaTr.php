@@ -274,7 +274,7 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 2 && $_SESSION['status'
                             // Adicione mais opções conforme necessário
                             echo "</select>";
                             echo "</div>";
-                            echo "<div class='col-6 Front-desk'>";
+                            echo "<div class='col-6 mt-4 Front-desk'>";
                             echo "<p for='acao' style='font-size: 1.3em;'>1) Preencha os campos em aberto da ocorrência.</p>";
                             echo "<p for='acao' style='font-size: 1.3em;'>2) Clique no botão 'ATRUALIZAR E FINALIZAR' para que os dados sejam registrados e finalizados.</p>";
                             echo "</div>";
