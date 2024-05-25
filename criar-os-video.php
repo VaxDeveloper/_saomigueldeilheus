@@ -187,7 +187,7 @@ if (!isset($_SESSION['user'])) {
                                                     <option value="1988">1988 - LEANDRO CERQUEIRA MEIRELES</option>
                                                     <option value="2002">2002 - LUCIANO VIEIRA COSTA</option>
                                                     <option value="2003">2003 - CLAUDIO SANTOS DA SILVA</option>
-						    <option value="2004">2004 - CLAYTON MARTINS DE FRANÇA</option>
+						                            <option value="2004">2004 - CLAYTON MARTINS DE FRANÇA</option>
                                                     <option value="2009">2009 - IVANILDO RODRIGUES DE JESUS</option>
                                                     <option value="2010">2010 - CARLOS HENRIQUE SILVA SANTOS</option>
                                                     <option value="2011">2011 - WILLIAN SANTOS PORTELA</option>
@@ -321,7 +321,7 @@ if (!isset($_SESSION['user'])) {
                                                 <optgroup label="This is a group">
                                                     <option value="">Selecione uma ocorrência!!!</option>
                                                     <option value="Acidente de Trânsito">Acidente de Trânsito</option>
-                                                    <option value="Acidente de Trânsito">Assalto</option>
+                                                    <option value="Assalto">Assalto</option>
                                                     <option value="Camera com Defeito">Camera com Defeito</option>
                                                     <option value="Cliente sentado no capô">Cliente sentado no capô</option>
                                                     <option value="Criança maior de 6 anos">Criança maior de 6 anos</option>
@@ -329,27 +329,19 @@ if (!isset($_SESSION['user'])) {
                                                     <option value="Discussão com cliente">Discussão com cliente</option>
                                                     <option value="Evasão">Evasão</option>
                                                     <option value="Motorista sem cinto">Motorista sem cinto</option>
-                                                    <option value="Motorista tira a mão do volante">Motorista tira a mão
-                                                        do volante</option>
-                                                    <option value="Motorista fazendo uso do celular">Motorista fazendo
-                                                        uso do celular</option>
-                                                    <option value="Motorista utilizando fone de ouvido">Motorista
-                                                        utilizando fone de ouvido</option>
-                                                    <option value="Motorista na contra mão">Motorista na contra mão
-                                                    </option>
-                                                    <option value="Motorista comendo e dirigindo">Motorista comendo e
-                                                        dirigindo</option>
-                                                    <option value="Motorista atrasando viagem">Motorista atrasando
-                                                        viagem</option>
-                                                    <option value="Motorista adiantando viagem">Motorista adiantando
-                                                        viagem</option>
+                                                    <option value="Motorista tira a mão do volante">Motorista tira a mão do volante</option>
+                                                    <option value="Motorista fazendo uso do celular">Motorista fazendo uso do celular</option>
+                                                    <option value="Motorista utilizando fone de ouvido">Motorista utilizando fone de ouvido</option>
+                                                    <option value="Motorista na contra mão">Motorista na contra mão</option>
+                                                    <option value="Motorista comendo e dirigindo">Motorista comendo e dirigindo</option>
+                                                    <option value="Motorista atrasando viagem">Motorista atrasando viagem</option>
+                                                    <option value="Motorista adiantando viagem">Motorista adiantando viagem</option>
                                                     <option value="Motorista parado">Motorista parado</option>
-                                                    <option value="Passageiro no degrau dianteiro">Passageiro no degrau
-                                                        dianteiro</option>
-                                                    <option value="Queda no interior do veículo">Queda no interior do
-                                                        veículo</option>
+                                                    <option value="Motorista Urinando">Motorista Urinando</option>
+                                                    <option value="Passageiro no degrau dianteiro">Passageiro no degrau dianteiro</option>
+                                                    <option value="Queda no interior do veículo">Queda no interior do veículo</option>
                                                     <option value="Queda fora do veículo">Queda fora do veículo</option>
-                                                    <option value="Vandalismo & Pula Catraca">Vandalos</option>
+                                                    <option value="Vandalismo & Pula Catraca">Vandalismo & Pula Catraca</option>
                                                 </optgroup>
                                             </select></div>
                                         <div class="d-flex mb-3"><input class="form-control" type="file" name="video" required></div>
