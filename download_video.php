@@ -24,7 +24,7 @@ if (isset($_GET['video1']) || isset($_GET['video2']) || isset($_GET['video3'])) 
     }
 
     // Consulta para obter o caminho do vídeo pelo ID
-    $consulta_sql = "SELECT $video_column FROM ocorrencia_video WHERE id = ?";
+    $consulta_sql = "SELECT $video_column FROM u219851065_smiguel.ocorrencia_video WHERE id = ?";
     $stmt = mysqli_prepare($conexao, $consulta_sql);
 
     if ($stmt) {
