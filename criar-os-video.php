@@ -343,9 +343,12 @@ if (!isset($_SESSION['user'])) {
                                                     <option value="Queda no interior do veículo">Queda no interior do veículo</option>
                                                     <option value="Queda fora do veículo">Queda fora do veículo</option>
                                                     <option value="Vandalismo & Pula Catraca">Vandalismo & Pula Catraca</option>
+                                                    <option value="Velocidade">Velocidade</option>
                                                 </optgroup>
                                             </select></div>
-                                        <div class="d-flex mb-3"><input class="form-control" type="file" name="video" required></div>
+                                        <div class="d-flex mb-3"><input class="form-control" type="file" name="video1" required></div>
+                                        <div class="d-flex mb-3"><input class="form-control" type="file" name="video2" required></div>
+                                        <div class="d-flex mb-3"><input class="form-control" type="file" name="video3" required></div>
                                         <div class="mb-3"><textarea class="form-control" id="message-2" name="descricao"
                                                 rows="6" placeholder="Message"></textarea></div>
                                         <div><button class="btn btn-primary d-block w-100" type="submit" style="font-size:20px">Enviar dados para o Servidor</button>

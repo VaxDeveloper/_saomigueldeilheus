@@ -161,13 +161,15 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 1 && $_SESSION['status'
                                 <th class='text-center align-middle mobile-report'>Descrição</th>
                                 <th class='text-center align-middle mobile-report'>Enviar Trafego</th>
                                 <th class='text-center align-middle mobile-report'>Enviar Manutenção</th>
-                                <th class='text-center align-middle'>Vídeo</th>";
+                                <th class='text-center align-middle'>Vídeo1</th>;
+                                <th class='text-center align-middle'>Vídeo2</th>;
+                                <th class='text-center align-middle'>Vídeo2</th>";
                             echo "</tr>
                         </thead>
                         <tbody class='table-group-divider'>";
                 while ($linha = mysqli_fetch_assoc($resultado_consulta)) {
                     // Constrói o caminho do arquivo
-                    $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$linha['video']}";
+                    $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$linha['video1']}";
                                     echo "<tr>
                                         <td class='text-center text-danger align-middle'>{$linha['id']}</td>
                                         <td class='text-center align-middle'>{$linha['data']}</td>
@@ -190,7 +192,9 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 1 && $_SESSION['status'
                                                 <button type='submit' class='btn btn-outline-danger btn-sm'>Manut</button>
                                             </form>
                                         </td>
-                                        <td class='text-center align-middle'><a href='download_video.php?video={$linha['id']}'>Download</a></td>
+                                        <td class='text-center align-middle'><a href='download_video.php?video1={$linha['id']}'>Download</a></td>
+                                        <td class='text-center align-middle'><a href='download_video.php?video2={$linha['id']}'>Download</a></td>
+                                        <td class='text-center align-middle'><a href='download_video.php?video3={$linha['id']}'>Download</a></td>
                                     </tr>";
                             
                 }

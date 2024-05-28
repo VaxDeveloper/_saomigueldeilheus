@@ -2,8 +2,19 @@
 // Inicia a sessão
 session_start();
 
-if (isset($_GET['video'])) {
-    $video_id = $_GET['video'];
+// Verifica se pelo menos um dos parâmetros (video1, video2, video3) está presente na URL
+if (isset($_GET['video1']) || isset($_GET['video2']) || isset($_GET['video3'])) {
+    // Define qual vídeo será baixado
+    if (isset($_GET['video1'])) {
+        $video_id = $_GET['video1'];
+        $video_column = 'video1';
+    } elseif (isset($_GET['video2'])) {
+        $video_id = $_GET['video2'];
+        $video_column = 'video2';
+    } else {
+        $video_id = $_GET['video3'];
+        $video_column = 'video3';
+    }
 
     // Conexão com o banco de dados
     $conexao = mysqli_connect("localhost", "u219851065_admin", "Xavier364074$", "u219851065_smiguel");
@@ -13,8 +24,7 @@ if (isset($_GET['video'])) {
     }
 
     // Consulta para obter o caminho do vídeo pelo ID
-    // Aqui estou assumindo que você quer buscar em uma tabela específica. Altere conforme necessário.
-    $consulta_sql = "SELECT video FROM ocorrencia_video WHERE id = ?";
+    $consulta_sql = "SELECT $video_column FROM ocorrencia_video WHERE id = ?";
     $stmt = mysqli_prepare($conexao, $consulta_sql);
 
     if ($stmt) {
@@ -27,7 +37,7 @@ if (isset($_GET['video'])) {
         if ($video_path) {
             // Verifica se o arquivo existe antes de iniciar o download
             if (file_exists($video_path)) {
-                // Defina os cabeçalhos para indicar que é um arquivo de vídeo
+                // Define os cabeçalhos para indicar que é um arquivo de vídeo
                 header('Content-Type: video/mp4');
                 header('Content-Disposition: attachment; filename="' . basename($video_path) . '"');
                 header('Content-Length: ' . filesize($video_path));
@@ -46,5 +56,7 @@ if (isset($_GET['video'])) {
     }
 
     mysqli_close($conexao);
+} else {
+    echo "Nenhum vídeo especificado.";
 }
 ?>

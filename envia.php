@@ -15,14 +15,13 @@
     <link rel="stylesheet" href="assets/css/tela-login/Login-with-overlay-image.css">
 
     <style>
-            /* Oculta o botão de voltar ao dashboard ao imprimir */
-            @media print {
-                .print-hide {
-                    display: none !important;
-                }
+        /* Oculta o botão de voltar ao dashboard ao imprimir */
+        @media print {
+            .print-hide {
+                display: none !important;
             }
+        }
     </style>
-
 </head>
 
 <body>
@@ -34,79 +33,71 @@
     </nav>
 
     <div class="container">
-            <?php
-// Inicia a sessão
-session_start();
+        <?php
+        // Inicia a sessão
+        session_start();
 
-$conexao = mysqli_connect("localhost", "u219851065_admin", "Xavier364074$", "u219851065_smiguel");
+        $conexao = mysqli_connect("localhost", "u219851065_admin", "Xavier364074$", "u219851065_smiguel");
 
-if (!$conexao) {
-    echo "NÃO CONECTADO";
-} else {
-    echo "<div class='fs-6'>CONECTADO AO BANCO>>>>>>></div>";
+        if (!$conexao) {
+            echo "NÃO CONECTADO";
+        } else {
+            echo "<div class='fs-6'>CONECTADO AO BANCO>>>>>>></div>";
 
-    $data = mysqli_real_escape_string($conexao, $_POST['data']);
-    $horario = mysqli_real_escape_string($conexao, $_POST['horario']);
-    $motorista = mysqli_real_escape_string($conexao, $_POST['motorista']);
-    $linha = mysqli_real_escape_string($conexao, $_POST['linha']);
-    $carro = mysqli_real_escape_string($conexao, $_POST['carro']);
-    $fiscal = mysqli_real_escape_string($conexao, $_POST['fiscal']);
-    $ocorrencia = mysqli_real_escape_string($conexao, $_POST['ocorrencia']);
-    $descricao = mysqli_real_escape_string($conexao, $_POST['descricao']);
+            $data = mysqli_real_escape_string($conexao, $_POST['data']);
+            $horario = mysqli_real_escape_string($conexao, $_POST['horario']);
+            $motorista = mysqli_real_escape_string($conexao, $_POST['motorista']);
+            $linha = mysqli_real_escape_string($conexao, $_POST['linha']);
+            $carro = mysqli_real_escape_string($conexao, $_POST['carro']);
+            $fiscal = mysqli_real_escape_string($conexao, $_POST['fiscal']);
+            $ocorrencia = mysqli_real_escape_string($conexao, $_POST['ocorrencia']);
+            $descricao = mysqli_real_escape_string($conexao, $_POST['descricao']);
 
-    // Verifica se o arquivo foi enviado com sucesso
-    if ($_FILES['video']['error'] === UPLOAD_ERR_OK) {
-        $video_temp = $_FILES['video']['tmp_name'];
-        $video_nome = mysqli_real_escape_string($conexao, $_FILES['video']['name']);
+            $videos = ['video1', 'video2', 'video3'];
+            $videos_paths = [];
 
-        // Define o caminho para salvar o vídeo
-        $caminho_video = "../bkp/_saomigueldeilheus/videos/{$video_nome}";
+            foreach ($videos as $video) {
+                if ($_FILES[$video]['error'] === UPLOAD_ERR_OK) {
+                    $video_temp = $_FILES[$video]['tmp_name'];
+                    $video_nome = mysqli_real_escape_string($conexao, $_FILES[$video]['name']);
 
-        // Move o arquivo temporário para o local desejado
-        if (move_uploaded_file($video_temp, $caminho_video)) {
+                    // Define o caminho para salvar o vídeo
+                    $caminho_video = "../bkp/_saomigueldeilheus/videos/{$video_nome}";
 
-            // Insere apenas o nome do arquivo no banco de dados
-            $sql = "INSERT INTO u219851065_smiguel.ocorrencia_video(data, horario, motorista, linha, carro, fiscal, ocorrencia, descricao, video) VALUES ('$data', '$horario', '$motorista', '$linha', '$carro', '$fiscal', '$ocorrencia', '$descricao', '$video_nome')";
-            $resultado = mysqli_query($conexao, $sql);
-
-            if ($resultado) {
-                $linhas_afetadas = mysqli_affected_rows($conexao);
-
-                if ($linhas_afetadas > 0) {
-                    echo "<div class='fs-6'>OCORRÊNCIA CADASTRADA COM SUCESSO!!!</div><br>";
-
-                    // Obtém o ID da última inserção
-                    $ultimo_id = mysqli_insert_id($conexao);
-
-                    // Cria o link de download
-                    $link_download = "../bkp/_saomigueldeilheus/videos/{$video_nome}";
-
-                    // Atualiza a coluna "video" com o link de download
-                    $update_sql = "UPDATE u219851065_smiguel.ocorrencia_video SET video = '" . $link_download . "' WHERE id = " . $ultimo_id;
-                    $update_resultado = mysqli_query($conexao, $update_sql);
-
-                    if ($update_resultado) {
-                        echo "<div class='fs-6'>Link para download do vídeo adicionado à tabela no banco de dados.</div><br>";
-                        echo "<div class='fs-6'>Vídeo salvo com sucesso!</div>";
+                    // Move o arquivo temporário para o local desejado
+                    if (move_uploaded_file($video_temp, $caminho_video)) {
+                        $videos_paths[] = $caminho_video;
                     } else {
-                        echo "<div class='fs-6'>ERRO AO ATUALIZAR O LINK DE DOWNLOAD NA TABELA: </div>" . mysqli_error($conexao);
+                        echo "<div class='fs-6'>ERRO AO MOVER O ARQUIVO DE VÍDEO {$video} PARA O DIRETÓRIO DESTINADO.</div>";
                     }
                 } else {
-                    echo "<div class='fs-6'>NENHUMA LINHA AFETADA. Verifique se os dados foram inseridos corretamente.</div><br>";
+                    echo "<div class='fs-6'>ERRO NO ENVIO DO VÍDEO {$video}: </div>" . $_FILES[$video]['error'];
+                }
+            }
+
+            if (count($videos_paths) == 3) {
+                $sql = "INSERT INTO u219851065_smiguel.ocorrencia_video(data, horario, motorista, linha, carro, fiscal, ocorrencia, descricao, video1, video2, video3) VALUES ('$data', '$horario', '$motorista', '$linha', '$carro', '$fiscal', '$ocorrencia', '$descricao', '{$videos_paths[0]}', '{$videos_paths[1]}', '{$videos_paths[2]}')";
+                $resultado = mysqli_query($conexao, $sql);
+
+                if ($resultado) {
+                    $linhas_afetadas = mysqli_affected_rows($conexao);
+
+                    if ($linhas_afetadas > 0) {
+                        echo "<div class='fs-6'>OCORRÊNCIA CADASTRADA COM SUCESSO!!!</div><br>";
+                        echo "<div class='fs-6'>Vídeos salvos com sucesso!</div>";
+                    } else {
+                        echo "<div class='fs-6'>NENHUMA LINHA AFETADA. Verifique se os dados foram inseridos corretamente.</div><br>";
+                    }
+                } else {
+                    echo "<div class='fs-6'>ERRO AO INSERIR DADOS: </div>" . mysqli_error($conexao);
                 }
             } else {
-                echo "<div class='fs-6'>ERRO AO INSERIR DADOS: </div>" . mysqli_error($conexao);
+                echo "<div class='fs-6'>ERRO NO ENVIO DOS VÍDEOS. Verifique se todos os vídeos foram enviados corretamente.</div>";
             }
-        } else {
-            echo "<div class='fs-6'>ERRO AO MOVER O ARQUIVO DE VÍDEO PARA O DIRETÓRIO DESTINADO.</div>";
         }
-    } else {
-        echo "<div class='fs-6'>ERRO NO ENVIO DO VÍDEO: </div>" . $_FILES['video']['error'];
-    }
-}
 
-mysqli_close($conexao);
-?>
+        mysqli_close($conexao);
+        ?>
 
         <div style="display: flex;">
             <!-- Botão de volta para Deschboard -->
@@ -116,3 +107,5 @@ mysqli_close($conexao);
         </div>
     </div>
 </body>
+
+</html>
