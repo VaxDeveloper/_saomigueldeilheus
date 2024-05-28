@@ -347,8 +347,8 @@ if (!isset($_SESSION['user'])) {
                                                 </optgroup>
                                             </select></div>
                                         <div class="d-flex mb-3"><input class="form-control" type="file" name="video1" required></div>
-                                        <div class="d-flex mb-3"><input class="form-control" type="file" name="video2" required></div>
-                                        <div class="d-flex mb-3"><input class="form-control" type="file" name="video3" required></div>
+                                        <div class="d-flex mb-3"><input class="form-control" type="file" name="video2"></div>
+                                        <div class="d-flex mb-3"><input class="form-control" type="file" name="video3"></div>
                                         <div class="mb-3"><textarea class="form-control" id="message-2" name="descricao"
                                                 rows="6" placeholder="Message"></textarea></div>
                                         <div><button class="btn btn-primary d-block w-100" type="submit" style="font-size:20px">Enviar dados para o Servidor</button>
