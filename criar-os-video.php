@@ -72,7 +72,7 @@ if (!isset($_SESSION['user'])) {
             </div>
         </div>
         <div class="container-dados">
-            <section class="position-relative py-4 py-xl-5">
+            <section class="position-relative py-1 py-xl-1">
                 <div class="container position-relative">
                     <div class="row d-flex justify-content-center">
                         <div class="col-9">
@@ -362,8 +362,8 @@ if (!isset($_SESSION['user'])) {
             </section>
         </div>
     </div>
-    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../assets/js/bs-init.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
 </body>
 
 </html>
