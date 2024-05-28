@@ -2,8 +2,8 @@
 // Inicia a sessão
 session_start();
 
-if (isset($_GET['video'])) {
-    $video_id = $_GET['video'];
+if (isset($_GET['video1'])) {
+    $video_id = $_GET['video1'];
 
     // Conexão com o banco de dados
     $conexao = mysqli_connect("localhost", "u219851065_admin", "Xavier364074$", "u219851065_smiguel");
@@ -14,7 +14,7 @@ if (isset($_GET['video'])) {
 
     // Consulta para obter o caminho do vídeo pelo ID
     // Aqui estou assumindo que você quer buscar em uma tabela específica. Altere conforme necessário.
-    $consulta_sql = "SELECT video FROM ocorrencia_finalizada WHERE id = ?";
+    $consulta_sql = "SELECT video1 FROM ocorrencia_finalizada WHERE id = ?";
     $stmt = mysqli_prepare($conexao, $consulta_sql);
 
     if ($stmt) {

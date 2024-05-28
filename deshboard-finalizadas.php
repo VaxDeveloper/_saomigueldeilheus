@@ -156,7 +156,7 @@ if (!isset($_SESSION['user']) || !in_array($_SESSION['status'], [2, 10, 11])) {
                         </thead>
                         <tbody class='table-group-divider'>";
                 while ($linha = mysqli_fetch_assoc($resultado_consulta)) {
-                    $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$linha['video']}";
+                    $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$linha['video1']}";
                     echo "<tr>
                         <td class='text-center text-danger align-middle'>{$linha['id']}</td>
                         <td class='text-center align-middle'>{$linha['data']}</td>
@@ -168,7 +168,7 @@ if (!isset($_SESSION['user']) || !in_array($_SESSION['status'], [2, 10, 11])) {
                         <td class='text-start align-middle'>{$linha['descricao']}</td>
                         <td class='text-center align-middle'>{$linha['acao']}</td>
                         <td class='text-start align-middle'>{$linha['observacoes']}</td>
-                        <td class='text-center align-middle'><a href='download_videoFim.php?video={$linha['id']}'>Download</a></td>
+                        <td class='text-center align-middle'><a href='download_videoFim.php?video1={$linha['id']}'>Download</a></td>
                     </tr>";
                 }
                 echo "</tbody>
