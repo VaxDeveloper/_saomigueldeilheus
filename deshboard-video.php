@@ -163,7 +163,7 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 1 && $_SESSION['status'
                                 <th class='text-center align-middle mobile-report'>Enviar Manutenção</th>
                                 <th class='text-center align-middle'>Vídeo1</th>;
                                 <th class='text-center align-middle'>Vídeo2</th>;
-                                <th class='text-center align-middle'>Vídeo2</th>";
+                                <th class='text-center align-middle'>Vídeo3</th>";
                             echo "</tr>
                         </thead>
                         <tbody class='table-group-divider'>";
