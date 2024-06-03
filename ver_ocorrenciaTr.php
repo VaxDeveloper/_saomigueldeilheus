@@ -116,12 +116,16 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 2 && $_SESSION['status'
                             echo "<p><strong>Horário:</strong> " . $detalhes_ocorrencia['horario'] . "</p>";
 
                             // Constrói o caminho do arquivo de vídeo
-                            $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$detalhes_ocorrencia['video']}";
+                            $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$detalhes_ocorrencia['video1']}";
+                            $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$detalhes_ocorrencia['video2']}";
+                            $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$detalhes_ocorrencia['video3']}";
 
                             echo "<div class='d-flex'>";
                             echo "<p><strong>Link:</strong></p>";
                             // Adiciona um link para download do vídeo
                             echo "<a class='mt-1 mx-2 link-warning' href='download_videoTr.php?video1={$detalhes_ocorrencia['id']}'>Vídeo-1</a>";
+                            echo "<a class='mt-1 mx-2 link-warning' href='download_videoTr.php?video2={$detalhes_ocorrencia['id']}'>Vídeo-2</a>";
+                            echo "<a class='mt-1 mx-2 link-warning' href='download_videoTr.php?video3={$detalhes_ocorrencia['id']}'>Vídeo-3</a>";
                             echo "</div>";
                             echo "</div>";
                             echo "<div class='col-8 detalhes-info-2'>";
