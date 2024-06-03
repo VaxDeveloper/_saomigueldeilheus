@@ -76,7 +76,9 @@
                                 <th class='text-center'>Ocorrência</th>
                                 <th class='text-center'>Descrição</th>
                                 <th class='text-center'>Ação</th>
-                                <th>Link do Vídeo</th>";
+                                <th>Vídeo 1</th>
+                                <th>Vídeo 2</th>
+                                <th>Vídeo 3</th>";
                 if ($_SESSION['status'] == 5) {
                     echo "<th>Editar</th>";
                 }
@@ -86,6 +88,8 @@
                 while ($linha = mysqli_fetch_assoc($resultado_consulta)) {
                     // Constrói o caminho do arquivo
                     $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$linha['video1']}";
+                    $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$linha['video2']}";
+                    $caminho_arquivo = "../bkp/_saomigueldeilheus/videos/{$linha['video3']}";
 
                     echo "<tr>
                             <td class='text-center'>{$linha['id']}</td>
@@ -97,7 +101,9 @@
                             <td class='text-start'>{$linha['ocorrencia']}</td>
                             <td class='text-start'>{$linha['descricao']}</td>
                             <td class='text-start'>{$linha['acao']}</td>
-                            <td><a href='download_videoTr.php?video={$linha['id']}'>Download</a></td>";
+                            <td><a href='download_videoTr.php?video1={$linha['id']}'>Download</a></td>
+                            <td><a href='download_videoTr.php?video2={$linha['id']}'>Download</a></td>
+                            <td><a href='download_videoTr.php?video3={$linha['id']}'>Download</a></td>";
                     echo "</tr>";
                 }
                 echo "</tbody>
