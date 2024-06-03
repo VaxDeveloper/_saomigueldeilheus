@@ -321,8 +321,8 @@ if (!isset($_SESSION['user']) || ($_SESSION['status'] != 2 && $_SESSION['status'
             </div>
         </div>
     </div>
-    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../assets/js/bs-init.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
 </body>
 
 </html>
