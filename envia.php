@@ -107,7 +107,7 @@
         <div style="display: flex;">
             <!-- Botão de volta para Dashboard -->
             <div style="margin-top: 20px;" class="print-hide">
-                <a href="criar-os-video.php" class="btn btn-primary">Voltar Cadastro</a>
+                <a href="./criar-os-video.php" class="btn btn-primary">Voltar Cadastro</a>
             </div>
         </div>
     </div>

@@ -66,5 +66,5 @@ mysqli_close($conexao);
 
 <!-- Botão de volta para Dashboard -->
 <div style="margin-top: 20px;">
-    <a href="dashboard-video.php" class="btn btn-primary">Voltar para Dashboard</a>
+    <a href="./deshboard-video.php" class="btn btn-primary">Voltar para Dashboard</a>
 </div>
