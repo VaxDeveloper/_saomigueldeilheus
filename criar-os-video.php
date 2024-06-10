@@ -340,6 +340,7 @@ if (!isset($_SESSION['user'])) {
                                                     <option value="Motorista adiantando viagem">Motorista adiantando viagem</option>
                                                     <option value="Motorista parado">Motorista parado</option>
                                                     <option value="Motorista Urinando">Motorista Urinando</option>
+                                                    <option value="Ônibus Lotado">Ônibus Lotado</option>
                                                     <option value="Passageiro no degrau dianteiro">Passageiro no degrau dianteiro</option>
                                                     <option value="Queda no interior do veículo">Queda no interior do veículo</option>
                                                     <option value="Queda fora do veículo">Queda fora do veículo</option>
