@@ -245,6 +245,7 @@ if (!isset($_SESSION['user'])) {
                                                     <option value="">Informe o Veículo</option>
                                                     <option value="925">925</option>
                                                     <option value="927">927</option>
+                                                    <option value="1001">1001</option>
                                                     <option value="1112">1112</option>
                                                     <option value="1115">1115</option>
                                                     <option value="1116">1116</option>
