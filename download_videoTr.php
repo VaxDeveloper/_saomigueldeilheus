@@ -39,7 +39,7 @@
 
             // Verifica se pelo menos um dos parâmetros (video1, video2, video3) está presente na URL
             if (isset($_GET['video1']) || isset($_GET['video2']) || isset($_GET['video3'])) {
-                // Define qual vídeo será baixado
+                // Define qual vídeo será exibido
                 if (isset($_GET['video1'])) {
                     $video_id = $_GET['video1'];
                     $video_column = 'video1';
@@ -70,16 +70,13 @@
                     mysqli_stmt_close($stmt);
 
                     if ($video_path) {
-                        // Verifica se o arquivo existe antes de iniciar o download
+                        // Verifica se o arquivo existe antes de exibir
                         if (file_exists($video_path)) {
-                            // Define os cabeçalhos para indicar que é um arquivo de vídeo
-                            header('Content-Type: video/mp4');
-                            header('Content-Disposition: attachment; filename="' . basename($video_path) . '"');
-                            header('Content-Length: ' . filesize($video_path));
-
-                            // Saída do conteúdo do arquivo
-                            readfile($video_path);
-                            exit;
+                            // Exibe o vídeo
+                            echo '<video width="600" controls>
+                                    <source src="' . htmlspecialchars($video_path) . '" type="video/mp4">
+                                    Seu navegador não suporta o elemento de vídeo.
+                                  </video>';
                         } else {
                             echo "Arquivo não encontrado";
                         }
@@ -106,6 +103,3 @@
 </body>
 
 </html>
-
-
-
